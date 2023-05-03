@@ -26,7 +26,7 @@ def test( i_loss_func,
   with torch.no_grad():
     for batch_ndx, sample in enumerate(io_data_loader):
       l_prediction = io_model(sample[0])
-      l_loss_total += i_loss_func(l_prediction, sample[1])
+      l_loss_total += i_loss_func(l_prediction, sample[1]).item()
       l_n_correct += (l_prediction.argmax(1) == sample[1]).type(torch.float).sum().item()
 
 

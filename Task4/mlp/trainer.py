@@ -34,4 +34,4 @@ def train( i_loss_func,
 
 
 
-  return l_loss_total
+  return l_loss_total.item()

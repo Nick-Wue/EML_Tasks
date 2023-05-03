@@ -84,7 +84,7 @@ def plot( i_off,
   for indx, sample in enumerate(dataset):
     
     if (indx % i_stride == i_off):
-      fig.add_subplot(10, 10, i)
+      fig.add_subplot(5, 5, i)
       i += 1
       prediction = io_model(sample[0])
       prediction = prediction.argmax(1)
