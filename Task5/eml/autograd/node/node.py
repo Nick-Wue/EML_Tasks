@@ -1,5 +1,5 @@
-from .. import context
-from . import function
+import context
+import function
 
 class Node:
   ## Initializes a node of the computation graph.

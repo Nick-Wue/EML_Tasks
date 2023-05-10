@@ -3,3 +3,14 @@ Task3/eml/perceptron/__pycache__/trainer.cpython-310.pyc
 Task3/eml/vis/__pycache__/points.cpython-310.pyc
 Task5/__pycache__/Task5_1.cpython-310.pyc
 Task5/__pycache__/test_Task5_1.cpython-310.pyc
+Task5/__pycache__/Task5_1.cpython-39.pyc
+Task5/__pycache__/test_Task5_1.cpython-39.pyc
+Task5/eml/autograd/__pycache__/context.cpython-39.pyc
+Task5/eml/autograd/__pycache__/function.cpython-39.pyc
+Task5/eml/autograd/__pycache__/test_function.cpython-39.pyc
+Task5/eml/autograd/__pycache__/test_node.cpython-39.pyc
+Task5/eml/autograd/node/__pycache__/__init__.cpython-39.pyc
+Task5/eml/autograd/node/__pycache__/context.cpython-39.pyc
+Task5/eml/autograd/node/__pycache__/function.cpython-39.pyc
+Task5/eml/autograd/node/__pycache__/node.cpython-39.pyc
+Task5/eml/autograd/node/__pycache__/test_node.cpython-39.pyc
