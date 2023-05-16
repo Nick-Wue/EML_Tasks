@@ -1,6 +1,3 @@
-import torch
-from eml.ext.linear_python.Function import Function
-from torch.nn import Module
 class Layer(Module):
     def __init__(self,
                  i_n_features_input,
