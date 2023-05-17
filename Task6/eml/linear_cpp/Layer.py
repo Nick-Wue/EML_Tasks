@@ -1,4 +1,9 @@
-class Layer(Module):
+
+import torch
+from torch.nn import Module
+from Function import Function
+
+class Layer_cpp(Module):
     def __init__(self,
                  i_n_features_input,
                  i_n_features_output):

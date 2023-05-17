@@ -1,4 +1,9 @@
-from setuptools import setup, Extension
-from torch.utils import cpp_extension
+import setuptools
+import torch.utils.cpp_extension
+import os
 
-setup(name="hello", ext_modules=[cpp_extension.CppExtension("hello_cpp", [])])
+setuptools.setup( name        = "eml_ext",
+                  ext_modules = [ torch.utils.cpp_extension.CppExtension( 'eml_ext_function_cpp',
+                                                                          ['FunctionCpp.cpp'] ) ],
+                  cmdclass = { 'build_ext': torch.utils.cpp_extension.BuildExtension }
+)
