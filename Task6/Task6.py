@@ -12,6 +12,7 @@ X_test_copy = torch.Tensor([[7,8,9],
                   [10,11,12]])
 X_test_copy.requires_grad = True
 X.requires_grad = True
+
 dLdY = torch.Tensor([[1,2],
                     [2,3]])
 
@@ -39,14 +40,15 @@ test_layer = Layer(3, 2)
 test_layer.weight = torch.nn.Parameter(W)
 
 
-print("Gradients with custom linear layer: \n")
+print("Gradients and result with custom linear layer: \n")
 out_test = test_layer.forward(X_test_copy)
 out_test.backward(dLdY)
 print(test_layer.weight.grad)
 print(X_test_copy)
 
-print("Gradients with custom cpp Function: \n")
+print("Gradient of weight and result with custom cpp Function: \n")
 cpp_layer = Layer_cpp(3,2)
+cpp.weight = torch.nn.Parameter(W)
 test_cpp = cpp_layer.forward(X)
 print(test_cpp)
 test_cpp.backward(dLdY)

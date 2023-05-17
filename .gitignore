@@ -64,3 +64,17 @@ Task6/eml/linear_cpp/eml_ext.egg-info/SOURCES.txt
 Task6/eml/linear_cpp/eml_ext.egg-info/top_level.txt
 Task6/eml/ext/linear_cpp/__pycache__/Function.cpython-310.pyc
 Task6/eml/ext/linear_cpp/__pycache__/Layer.cpython-310.pyc
+Task6/eml/ext/linear_cpp/build/eml_ext_function_cpp.cpython-310-x86_64-linux-gnu.so
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/direct_url.json
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/INSTALLER
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/METADATA
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/RECORD
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/REQUESTED
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/top_level.txt
+Task6/eml/ext/linear_cpp/build/eml_ext-0.0.0.dist-info/WHEEL
+Task6/eml/ext/linear_cpp/build/lib.linux-x86_64-cpython-310/eml_ext_function_cpp.cpython-310-x86_64-linux-gnu.so
+Task6/eml/ext/linear_cpp/build/temp.linux-x86_64-cpython-310/FunctionCpp.o
+Task6/eml/ext/linear_cpp/eml_ext.egg-info/dependency_links.txt
+Task6/eml/ext/linear_cpp/eml_ext.egg-info/PKG-INFO
+Task6/eml/ext/linear_cpp/eml_ext.egg-info/SOURCES.txt
+Task6/eml/ext/linear_cpp/eml_ext.egg-info/top_level.txt
