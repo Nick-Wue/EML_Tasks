@@ -1,7 +1,7 @@
 
 import torch
 from torch.nn import Module
-from Function import Function
+from eml.ext.linear_cpp.Function import FunctionCpp
 
 class Layer_cpp(Module):
     def __init__(self,
@@ -14,4 +14,4 @@ class Layer_cpp(Module):
         torch.nn.init.uniform_(self.weight, -0.1, 0.1)
         
     def forward(self, input):
-        return Function.apply(input, self.weight)
+        return FunctionCpp.apply(input, self.weight)

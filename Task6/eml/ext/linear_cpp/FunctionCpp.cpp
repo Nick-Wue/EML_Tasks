@@ -3,14 +3,14 @@
 
 
 torch::Tensor mm_multiplication(torch::Tensor left, torch::Tensor right){
-  int rows_l = left.sizes()[1];
-  int cols_r = right.sizes()[0];
-  int rows_r = right.sizes()[1];
+  int rows_l = left.sizes()[0] ;
+  int cols_r = right.sizes()[1] ;
+  int rows_r = right.sizes()[0] ;
+  int cols_l = left.sizes()[1];
   torch::Tensor res = torch::zeros({rows_l, cols_r});
-
   for (int i = 0; i < rows_l; i++) {
     for (int j = 0; j < cols_r; j++) {
-        for (int k = 0; k < rows_r; k++) {
+        for (int k = 0; k < cols_l; k++) {
             res[i][j] += left[i][k] * right[k][j];
           }
     }
@@ -29,9 +29,11 @@ std::vector< torch::Tensor > backward( torch::Tensor i_grad,
                                        torch::Tensor i_weights ){
                                         std::vector<torch::Tensor> result; 
                                         auto grad_input = mm_multiplication(i_grad, i_weights);
-                                        auto grad_weights = mm_multiplication(i_grad.transpose(0,1), i_input);
-                                        result.push_back(grad_input);
+                                        auto i_grad_T = i_grad.transpose(0,1);
+                                        auto grad_weights = mm_multiplication(i_grad_T, i_input);
+                                        
                                         result.push_back(grad_weights);
+                                        result.push_back(grad_input);
                                         return result;
 
                                        }
