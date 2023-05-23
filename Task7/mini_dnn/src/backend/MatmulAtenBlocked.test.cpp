@@ -33,9 +33,22 @@ TEST_CASE( "Tests the Matmul forward operator through blocked Aten calls.",
   // W: kb x cb x bk x bc
   // Y: kb x nb x bk x bn
 
+  //split in one dimension
+  auto l_x_v = l_x.view({l_size_nb, l_size_bn, l_size_cb, l_size_bc}).permute({0,2,3,1}).contiguous();
+  auto l_w_v = l_w.view({l_size_cb, l_size_bc, l_size_kb, l_size_bk}).permute({0,2,3,1}).contiguous();
+
+  std::cout << l_x_v[0].sizes();
+  std::cout << l_x_v[0].strides();
+  std::cout << l_w_v[0].sizes();
+  std::cout << l_w_v[0].strides();
+
+  mini_dnn::backend::MatmulAtenBlocked matmul_o;
+  auto l_y = matmul_o.forward(l_x_v, l_w_v);
+  l_y = l_y.view({l_size_n, l_size_k});
   // compute reference
-  //at::Tensor l_reference = at::matmul( l_x, l_w );
+
+  at::Tensor l_reference = at::matmul( l_x, l_w );
 
   // check solution
-  //REQUIRE( at::allclose( l_y, l_reference ) );
+  REQUIRE( at::allclose( l_y, l_reference ) );
 }

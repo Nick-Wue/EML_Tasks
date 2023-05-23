@@ -78,3 +78,9 @@ Task6/eml/ext/linear_cpp/eml_ext.egg-info/dependency_links.txt
 Task6/eml/ext/linear_cpp/eml_ext.egg-info/PKG-INFO
 Task6/eml/ext/linear_cpp/eml_ext.egg-info/SOURCES.txt
 Task6/eml/ext/linear_cpp/eml_ext.egg-info/top_level.txt
+Task7/mini_dnn/build/performance_matmul
+Task7/mini_dnn/build/test
+Task7/mini_dnn/build/backend/MatmulAtenBlocked.o
+Task7/mini_dnn/build/backend/MatmulReluAten.o
+Task7/mini_dnn/build/tests/MatmulAtenBlocked.test.o
+Task7/mini_dnn/build/tests/MatmulReluAten.test.o

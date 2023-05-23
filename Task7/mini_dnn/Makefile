@@ -3,7 +3,7 @@ CXXFLAGS ?=
 LDFLAGS ?=
 RPATHS ?=
 LIBXSMM_DIR ?= libxsmm
-OPTIONS = -O2 -std=c++20 -pedantic -Wall -Wextra -DTORCH_API_INCLUDE_EXTENSION_H -I.
+OPTIONS = -O2 -std=c++2a -pedantic -Wall -Wextra -DTORCH_API_INCLUDE_EXTENSION_H -I.
 
 PYTORCH_INCLUDE = $(shell python -c 'from torch.utils.cpp_extension import include_paths; [print(p) for p in include_paths()]')
 PYTORCH_LINK = $(shell python -c 'from torch.utils.cpp_extension import library_paths; [print(p) for p in library_paths()]')
