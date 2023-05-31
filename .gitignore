@@ -84,3 +84,10 @@ Task7/mini_dnn/build/backend/MatmulAtenBlocked.o
 Task7/mini_dnn/build/backend/MatmulReluAten.o
 Task7/mini_dnn/build/tests/MatmulAtenBlocked.test.o
 Task7/mini_dnn/build/tests/MatmulReluAten.test.o
+Task8/mini_dnn/build/performance_matmul
+Task8/mini_dnn/build/test
+Task8/mini_dnn/build/backend/MatmulLibxsmm.o
+Task8/mini_dnn/build/backend/MatmulReluAten.o
+Task8/mini_dnn/build/tests/MatmulAtenBlocked.test.o
+Task8/mini_dnn/build/tests/MatmulLibxsmm.test.o
+Task8/mini_dnn/build/tests/MatmulReluAten.test.o

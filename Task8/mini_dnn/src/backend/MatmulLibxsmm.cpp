@@ -59,26 +59,30 @@ at::Tensor mini_dnn::backend::MatmulLibxsmm::forward( at::Tensor i_x,
   float * l_ptr_b = (float*) i_w.data_ptr();
   float * l_ptr_c = (float*) l_y.data_ptr();
 
+  int l_offset_c, l_offset_b, l_offset_a;
+  std::cout << l_strides_a;
+  std::cout << l_strides_b;
+  std::cout << l_strides_c;
   // execute blocked GEMMs for
 #pragma omp parallel for collapse(2) firstprivate(l_param)
   for( int64_t l_kb = 0; l_kb < l_sizes.kb; l_kb++ ) {
     for( int64_t l_nb = 0; l_nb < l_sizes.nb; l_nb++ ) {
-      // TODO: compute offset in C
+      l_offset_c = (l_sizes.bn * l_sizes.bk) * (l_nb + (2 * l_kb)) ;
+      //l_offset_c = ((l_strides_c[0] * l_kb) + (l_strides_c[1] * l_nb))  ;
 
       for( int64_t l_cb = 0; l_cb < l_sizes.cb; l_cb++ ) {
-        // TODO: compute offset in A
-
-        // TODO: compute offset in B
+        l_offset_a = (l_sizes.bn * l_sizes.bc) * (l_cb + (2 * l_nb));
+        l_offset_b = ((l_sizes.bk * l_sizes.bc) * (l_cb + (2 * l_kb))) ;
 
         // TODO: call JITted kernels
         // if the offsets are in l_offset_a, l_offset_b, l_offset_c
         // pass the pointers to the kernel through:
         //
-        // l_param.a.primary = l_ptr_a + l_offset_a;
-        // l_param.b.primary = l_ptr_b + l_offset_b;
-        // l_param.c.primary = l_ptr_c + l_offset_c;
+        l_param.a.primary = l_ptr_a + l_offset_a;
+        l_param.b.primary = l_ptr_b + l_offset_b;
+        l_param.c.primary = l_ptr_c + l_offset_c;
 
-        // l_kernel_forward.gemm( &l_param );
+        l_kernel_forward.gemm( &l_param );
       }
     }
   }
